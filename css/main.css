@@ -2094,7 +2094,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff547f;
+  background: #ffff47;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2667,6 +2667,14 @@ img:hover {
   border: 1px solid #555;
   border-radius: 4px;
 }
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
+  border-bottom: none;
+}
+.gt-container .gt-popup .gt-action.is--active:before {
+  top: 0.7em;
+}
 .page-archive .archive-page-counter {
   position: relative;
   top: 3px;
@@ -3227,9 +3235,6 @@ img:hover {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
 }
 .links-of-author-item a {
   display: block;
@@ -3282,9 +3287,6 @@ img:hover {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
 }
 @media (max-width: 767px) {
   .post-body {

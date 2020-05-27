@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yjxsbiubiu.top/"/>
-  <updated>2020-05-27T08:06:11.733Z</updated>
+  <updated>2020-05-27T08:42:05.932Z</updated>
   <id>https://yjxsbiubiu.top/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>添加Valine评论</title>
+    <link href="https://yjxsbiubiu.top/2020/05/27/title-2/"/>
+    <id>https://yjxsbiubiu.top/2020/05/27/title-2/</id>
+    <published>2020-05-27T08:40:09.000Z</published>
+    <updated>2020-05-27T08:42:05.932Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Valine" scheme="https://yjxsbiubiu.top/tags/Valine/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PicGo为GitHub搭建图床</title>
+    <link href="https://yjxsbiubiu.top/2020/05/27/title-1/"/>
+    <id>https://yjxsbiubiu.top/2020/05/27/title-1/</id>
+    <published>2020-05-27T08:21:40.000Z</published>
+    <updated>2020-05-27T08:39:25.633Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>#前言 </p><p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术</p><h2 id="1-先下载PinGo"><a href="#1-先下载PinGo" class="headerlink" title="1.先下载PinGo"></a>1.先下载PinGo</h2><p>PinGo下载地址：<a href="https://github.com/Molunerfinn/picgo/releases" target="_blank" rel="noopener">https://github.com/Molunerfinn/picgo/releases</a></p><h2 id="2-生成token"><a href="#2-生成token" class="headerlink" title="2.生成token"></a>2.生成token</h2><p><img src="../CDN/5.png" alt="" loading="lazy"></p><p><img src="../CDN/6.png" alt="" loading="lazy"></p><p> <img src="../CDN/7.png" alt="" loading="lazy">)<img src="../CDN/9.png" alt="" loading="lazy"></p><p>复制生成的token，（注意勿要关闭网页这个token将不再出现）</p><h2 id="3-配置PinGo"><a href="#3-配置PinGo" class="headerlink" title="3.配置PinGo"></a>3.配置PinGo</h2><p><img src="../CDN/10.png" alt="" loading="lazy"></p><p>最下面的设定自定义域名：</p><p>| <a href="https://cdn.jsdelivr.net/gh/CCIT18101030213/CDN/" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/CCIT18101030213/CDN/</a> </p><p>| <a href="https://cdn.jsdelivr.net/gh/用户名/仓库名/" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/用户名/仓库名/</a></p><p>配置完就可以使用了。但要注意图床是任何人都能看到的，不要上传私密照片。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo搭建" scheme="https://yjxsbiubiu.top/categories/Hexo%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="图床" scheme="https://yjxsbiubiu.top/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
   
   <entry>
     <title>yun主题使用指南</title>

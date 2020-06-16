@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yjxsbiubiu.top/"/>
-  <updated>2020-06-01T01:48:38.508Z</updated>
+  <updated>2020-06-16T09:06:04.517Z</updated>
   <id>https://yjxsbiubiu.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设备连接</title>
+    <link href="https://yjxsbiubiu.top/2020/06/16/title-3/"/>
+    <id>https://yjxsbiubiu.top/2020/06/16/title-3/</id>
+    <published>2020-06-16T07:26:30.000Z</published>
+    <updated>2020-06-16T09:06:04.517Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="设备连接-环境准备"><a href="#设备连接-环境准备" class="headerlink" title="设备连接                 环境准备"></a>设备连接                 环境准备</h1><h2 id="一-确认本机上是否安装蓝牙"><a href="#一-确认本机上是否安装蓝牙" class="headerlink" title="一.确认本机上是否安装蓝牙"></a>一.确认本机上是否安装蓝牙</h2><p>有两个方法</p><p>方法一：在桌面最左下角的有一个搜索按钮，在上面打上<code>bluetooth</code>后回车，看是否打开</p><p><img src="../CDN/06.16.1.png" alt="" loading="lazy"></p><p>方法二：在chrome浏览器的地址栏输入<code>chrome://bluetooth-internals</code>,看是否发现周边蓝牙设备</p><p><img src="/CDN/06.16.2.png" alt="" loading="lazy"></p><blockquote><p>那个网址是chrome浏览器的插件，使用它可以看到周边蓝牙设备的信息，状态，服务等等。</p></blockquote><h2 id="二-检查本机，chrome浏览器的版本"><a href="#二-检查本机，chrome浏览器的版本" class="headerlink" title="二. 检查本机，chrome浏览器的版本"></a>二. 检查本机，chrome浏览器的版本</h2><p>1.chrome的70.03526.0以上。</p><blockquote><p>窗口关闭按钮的下方—&gt;帮助—&gt;关于Google Chrome</p></blockquote><p>2.windows 10的1703及以上。</p><p>注意： 设备连接并非只有Chrome浏览器支持，其他的都可以。</p><p>如果版本不一样请下载最新版。</p><h2 id="三-下载到开发板"><a href="#三-下载到开发板" class="headerlink" title="三.下载到开发板"></a>三.下载到开发板</h2><p>如果microbit开发板想和我们的电脑通过蓝牙进行无线通信，我们就需要启动板子的蓝牙设备功能，因此要下载固件到开发板中进行激活。</p><p> <a href="https://makecode.microbit.org/v0/89975-20684-84568-20127" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127</a></p><p>打开上面链接下载固件，然后用USB线连接开发板和电脑，如果出现Hi！，那就说明成功了。</p><p>这只是电脑本机使用</p><p>2.使用chrome浏览器下载</p><p><img src="/CDN/06.16.4.png" alt="" loading="lazy"></p><p>然后点击inspect,就会出现</p><p><img src="/CDN/06.16.5.png" alt="" loading="lazy"></p><p>出现connected表示连接成功.</p><p>板子出现以上结果显示C表示设备连接成功。</p><h2 id="四-创建html文件"><a href="#四-创建html文件" class="headerlink" title="四.创建html文件"></a>四.创建html文件</h2><p>我们也可以进行程序编写，也可以实现也可实现BBC micro:bit蓝牙设备连接。</p><p>我们先在空白处创建一个文本文档，然后编写程序，我是用的Visual Studio Code编写的</p><p>代码如下</p><p><img src="/CDN/06.16.6.png" alt="" loading="lazy"></p><p><img src="/CDN/06.16.7.png" alt="" loading="lazy"></p><p><img src="/CDN/06.161.png" alt="" loading="lazy"></p><p>然后把文本格式换一下，把txt换成html，然后用chrome浏览器打开。</p><p>就会出现<img src="/CDN/06.16.9.png" alt="" loading="lazy"></p><p>然后点击start scan,再点击开发板，就会出现</p><p><img src="/CDN/06.16.10.png" alt="" loading="lazy"></p><p><img src="/CDN/06.16.11.png" alt="" loading="lazy"></p><p>开发板出现’’C”,那说明连接成功。</p><p><img src="/CDN/06.16.13.jpg" alt="" loading="lazy"></p><p>设备连接成功。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>第三方支持</title>

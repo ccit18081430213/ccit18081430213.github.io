@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yjxsbiubiu.top/"/>
-  <updated>2020-06-17T09:23:57.223Z</updated>
+  <updated>2020-06-19T04:11:59.318Z</updated>
   <id>https://yjxsbiubiu.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MicroBit蓝牙设备的服务特性</title>
+    <link href="https://yjxsbiubiu.top/2020/06/18/title-4/"/>
+    <id>https://yjxsbiubiu.top/2020/06/18/title-4/</id>
+    <published>2020-06-18T14:08:29.000Z</published>
+    <updated>2020-06-19T04:11:59.318Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="micro-bit开发板的服务和特性简介"><a href="#micro-bit开发板的服务和特性简介" class="headerlink" title="micro:bit开发板的服务和特性简介"></a>micro:bit开发板的服务和特性简介</h1><p>了解专业词汇：</p><h6 id="profile"><a href="#profile" class="headerlink" title="profile"></a>profile</h6><p>profile可以理解为一种规范，一个标准的通信协议，它存在于从机中。蓝牙组织规定了一些标准的profile，例如 HID OVER GATT ，防丢器 ，心率计等。每个profile中会包含多个service，每个service代表从机的一种能力。</p><h5 id="service"><a href="#service" class="headerlink" title="service"></a>service</h5><p>service可以理解为一个服务，在ble从机中，通过有多个服务，例如电量信息服务、系统信息服务等，每个service中又包含多个characteristic特征值。每个具体的characteristic特征值才是ble通信的主题。比如当前的电量是80%，所以会通过电量的characteristic特征值存在从机的profile里，这样主机就可以通过这个characteristic来读取80%这个数据</p><h5 id="UUID"><a href="#UUID" class="headerlink" title="UUID"></a>UUID</h5><p>UUID，统一识别码，其目的，是让分布式系统中的所有元素，都能有唯一的辨识信息，而不需要通过中央控制端来做辨识信息的指定。如此一来，每个人都可以创建不与其它人冲突的UUID。在这样的情况下，就不需考虑数据库创建时的名称重复问题。</p><p>特性：是指一个服务里面，具有不同的功能使用，选择根据个人使用时候需求。</p><p><img src="../CDN/06.18.1.png" alt="" loading="lazy"></p><p>我们使用谷歌浏览器自带的网页蓝牙来连接我们的开发板,图中我们看了蓝色区域不同的services,下面有不同的序列号,这就是UUID.</p><h1 id="发现micro-bit开发板的服务和特性"><a href="#发现micro-bit开发板的服务和特性" class="headerlink" title="发现micro:bit开发板的服务和特性"></a>发现micro:bit开发板的服务和特性</h1><p>在我的设备连接博文里提到从<a href="https://makecode.microbit.org/v0/89975-20684-84568-20127" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127</a> 下载固件到BBC Micro:bit开发板时，你会发现我们的开发板服务上已经有了蓝牙加速计服务和蓝牙led服务。</p><p><img src="../CDN/06.18.2.png" alt="" loading="lazy"></p><p>大家也可以通过开发商提供的资料链接<a href="https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html" target="_blank" rel="noopener">https://lancaster-university.github.io/microbit-docs/resources/bluetooth/bluetooth_profile.html</a> ，这里都是关于开发板的服务和特性的UUID号，每个服务都对应的UUID号，当我们蓝色的服务UUID号与资料上的UUID号相同，那说明UUID相对应的服务已添加成功。</p><p><img src="../CDN/06.18.3.png" alt="" loading="lazy"></p><p><img src="../CDN/06.18.6.png" alt="" loading="lazy"></p><p><img src="../CDN/06.18.4.png" alt="" loading="lazy"></p><p><img src="../CDN/06.18.9.png" alt="" loading="lazy"></p><p>这只是led服务的两个特性。</p><h1 id="给BBC-Microbit开发板添加服务"><a href="#给BBC-Microbit开发板添加服务" class="headerlink" title="给BBC Microbit开发板添加服务"></a>给BBC Microbit开发板添加服务</h1><p>在蓝牙连接的状态下，打开<a href="https://makecode.microbit.org/v0/89975-20684-84568-20127，点击右上角的编辑，那个是在线源码编辑，然后会出来这个图" target="_blank" rel="noopener">https://makecode.microbit.org/v0/89975-20684-84568-20127，点击右上角的编辑，那个是在线源码编辑，然后会出来这个图</a></p><p><img src="/CDN/06.19.1.png" alt="" loading="lazy"></p><p>点击蓝牙，</p><p><img src="/CDN/06.19.2.png" alt="" loading="lazy"></p><p>然后把蓝牙温度服务拉出来，</p><p><img src="/CDN/06.19.3.png" alt="" loading="lazy"></p><p>然后按下面的保存和下载。</p><p>将下载好的hex文件放到你的MICROBIT(E)盘，这个时候就打开你的chrome浏览器，搜索<code>chrome://bluetooth-internals</code>,然后进行连接</p><p>，然后看看相对应的温度服务有没有连接成功</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>设备连接</title>

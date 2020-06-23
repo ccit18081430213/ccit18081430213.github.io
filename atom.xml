@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yjxsbiubiu.top/"/>
-  <updated>2020-06-21T10:16:07.856Z</updated>
+  <updated>2020-06-23T06:56:52.035Z</updated>
   <id>https://yjxsbiubiu.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MicroBit蓝牙设备的启用通知</title>
+    <link href="https://yjxsbiubiu.top/2020/06/23/title-6/"/>
+    <id>https://yjxsbiubiu.top/2020/06/23/title-6/</id>
+    <published>2020-06-23T02:31:54.000Z</published>
+    <updated>2020-06-23T06:56:52.035Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="显示加速度计得三轴值"><a href="#显示加速度计得三轴值" class="headerlink" title="显示加速度计得三轴值"></a>显示加速度计得三轴值</h3><p>加速度器是我们板子上一个很重要的传感器它主要有三个值x,y,z代表三个坐标也就是立体坐标。板子可以根据这三个值判断板子是否震动，位置改变等功能。</p><p>在前面添加一个变量，可以用它来跟踪通知订阅的状态。</p><p><code>var    notifications_enabled = false;//加速度计</code></p><p>订阅和接收通知只能在我们与设备连接时执行。我们还需要检查连接的设备是否包含所要求的相关的服务和特征，然后我们才试图启用有关该特征的通知。按钮调用toggleAccelerometerNotifications()函数，函数如下:</p><pre><code>function toggleAccelerometerNotifications() //1            {                 console.log(&quot;toggleAccelerometerNotifications&quot;);                 if (!connected)                 {                    alert(&quot;Error: Discover and connect to a device before using this function&quot;);                     return;                }                if (!services_discovered)                {                    alert(&quot;Error: Service discovery has not yet completed&quot;);                    return;                }                if (!has_accelerometer_service)                 {                    alert(&quot;Error: The connected device does not contain the accelerometer service&quot;);                     return;                }                if (!has_accelerometer_data)                 {                    alert(&quot;Error: The connected device does not contain the accelerometer datacharacteristic&quot;);                    return;                }                if (!notifications_enabled)                 {                     accelerometer_data.startNotifications().then(_ =&gt;                     {                        console.log(&#39;accelerometer notifications started&#39;);                         setNotificationsStatus(true);                        accelerometer_data.addEventListener(&#39;characteristicvaluechanged&#39;,onAccelerometerData);                    })                    .catch(error =&gt;                     {                       console.log(&#39;Error: &#39; + error);                        alert(&#39;Error: &#39; + error);                        return;                    });                }                 else                 {                    accelerometer_data.stopNotifications()                    .then(_ =&gt; {                    console.log(&#39;accelerometer notifications stopped&#39;);                     setNotificationsStatus(false);                    accelerometer_data.removeEventListener(&#39;characteristicvaluechanged&#39;,onAccelerometerData);                    })                    .catch(error =&gt;                     {                       console.log(&#39;Could not stop accelerometer_datanotifications: &#39; + error);                    });                }             }</code></pre><p>当然，通知也有启用和禁用，这取决于当前的订阅状态，代码也在上面其中。</p><p>其中accelerometer_data.addEventListener(‘characteristicvaluechanged’,onAccelerometerData);这两句<br>在这个函数启到一个监听的作用，一旦状态发生变化就会调用onAccelerometerData这个函数，该函数是用来显示X、Y、Z这三个轴的值</p><p>添加onAccelerometerData函数，它将在每次收到通知时被调用。事件处理程序接收一个事件对象，将附加到事件对象目标值的ArrayBuffer中</p><pre><code>function onAccelerometerData(event)           //1          {               console.log(&quot;onAccelerometerData&quot;);               buffer = event.target.value.buffer;               dataview = new DataView(buffer);              X = dataview.getUint16(0, true);               Y = dataview.getUint16(2, true);              Z = dataview.getUint16(4, true);              console.log(&quot;X=&quot; + X + &quot;, Y=&quot; + Y + &quot;, Z+&quot; + Z);              document.getElementById(&quot;accelerometer_data&quot;).innerHTML = &quot;X=&quot; + X + &quot;, Y=&quot; + Y + &quot;,Z=&quot; + Z;          }</code></pre><p>我们还需要一些代码来处理接收到的通知。 当我们停止通知的时候，我们还需要整理一下。</p><p><code>accelerometer_data.addEventListener(&#39;characteristicvaluechanged&#39;, onAccelerometerData); accelerometer_data.removeEventListener(&#39;characteristicvaluechanged&#39;, onAccelerometerData);</code></p><p>当接收到某个特征的通知时，将触发一个事件并附加该特征值。在更改中，我们所做的是注册一个函数来处理此事件。</p><p>到这里代码就都添加完成了，下面就可以连接BBC板察看结果了</p><h2 id="二，实验现象"><a href="#二，实验现象" class="headerlink" title="二，实验现象"></a>二，实验现象</h2><p>点击按钮效果如下</p><p><img src="/CDN/06.23.1.png" alt="" loading="lazy"></p><p>表格中Notifications下显示true，则表示通知已开启。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>MicroBit蓝牙设备的读写特性</title>

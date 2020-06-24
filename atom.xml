@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yjxsbiubiu.top/"/>
-  <updated>2020-06-23T06:56:52.035Z</updated>
+  <updated>2020-06-24T07:36:48.651Z</updated>
   <id>https://yjxsbiubiu.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>控制LED小灯的行列</title>
+    <link href="https://yjxsbiubiu.top/2020/06/24/title-7/"/>
+    <id>https://yjxsbiubiu.top/2020/06/24/title-7/</id>
+    <published>2020-06-24T06:23:53.000Z</published>
+    <updated>2020-06-24T07:36:48.651Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在网页上控制led的一行或者一列灯亮灭，用数组存放。</p><p>首先在前面定义一个数组，表示所要写入的值</p><pre><code>var led_array = [0, 0, 0, 0, 0];//控制小灯亮灭</code></pre><p>同时再定义两个数组a和b，作为小灯行列亮暗的标记位，a数组代表行，某位为0时代表相应行的小灯熄灭，某位为1时代表相应行的小灯点亮；b数组代表列，某位为0时代表相应列的小灯熄灭，某位为1时代表相应列的小灯点亮。</p><pre><code>var a=[0, 0, 0, 0, 0] ;  var b=[0, 0, 0, 0, 0] ;</code></pre><p>在boby中要定义十个按钮，五个按钮控制小灯的行，五个按钮控制小灯的列，而且每个按钮都调用一个函数，用来改变小灯的状态</p><pre><code>&lt;h3&gt;控制小灯行的亮暗&lt;/h3&gt;        &lt;button id=&quot;h_1&quot; onclick=&quot;h_1()&quot;&gt;第一行&lt;/button&gt;       &lt;button id=&quot;h_2&quot; onclick=&quot;h_2()&quot;&gt;第二行&lt;/button&gt;       &lt;button id=&quot;h_3&quot; onclick=&quot;h_3()&quot;&gt;第三行&lt;/button&gt;       &lt;button id=&quot;h_4&quot; onclick=&quot;h_4()&quot;&gt;第四行&lt;/button&gt;       &lt;button id=&quot;h_5&quot; onclick=&quot;h_5()&quot;&gt;第五行&lt;/button&gt;       &lt;hr&gt;       &lt;h3&gt;控制小灯列的亮暗&lt;/h3&gt;        &lt;button id=&quot;L_1&quot; onclick=&quot;L_1()&quot;&gt;第一列&lt;/button&gt;       &lt;button id=&quot;L_2&quot; onclick=&quot;L_2()&quot;&gt;第二列&lt;/button&gt;       &lt;button id=&quot;L_3&quot; onclick=&quot;L_3()&quot;&gt;第三列&lt;/button&gt;       &lt;button id=&quot;L_4&quot; onclick=&quot;L_4()&quot;&gt;第四列&lt;/button&gt;       &lt;button id=&quot;L_5&quot; onclick=&quot;L_5()&quot;&gt;第五列&lt;/button&gt;       &lt;hr&gt;</code></pre><p>控制列的按钮所调用的函数</p><pre><code>function  L_1()       {   var i=0;           if(b[0]==0)           {              for(i=0;i&lt;=4;i++)              led[i]=led[i]|(1&lt;&lt;4);              b[0]=1;           }           else{               for(i=0;i&lt;=4;i++)               led[i]=led[i]&amp;(~(1&lt;&lt;4));               b[0]=0;           }           randLEDs();       }       function  L_2()       {   var i=0;           if(b[1]==0)           {              for(i=0;i&lt;=4;i++)              led[i]=led[i]|(1&lt;&lt;3);              b[1]=1;           }           else{               for(i=0;i&lt;=4;i++)               led[i]=led[i]&amp;(~(1&lt;&lt;3));               b[1]=0;           }           randLEDs();       }       function  L_3()       {   var i=0;           if(b[2]==0)           {              for(i=0;i&lt;=4;i++)              led[i]=led[i]|(1&lt;&lt;2);              b[2]=1;           }           else{               for(i=0;i&lt;=4;i++)               led[i]=led[i]&amp;(~(1&lt;&lt;2));               b[2]=0;           }           randLEDs();       }       function  L_4()       {   var i=0;           if(b[3]==0)           {              for(i=0;i&lt;=4;i++)              led[i]=led[i]|(1&lt;&lt;1);              b[3]=1;           }           else{               for(i=0;i&lt;=4;i++)               led[i]=led[i]&amp;(~(1&lt;&lt;1));               b[3]=0;           }           randLEDs();       }       function  L_5()       {   var i=0;           if(b[4]==0)           {              for(i=0;i&lt;=4;i++)              led[i]=led[i]|(1&lt;&lt;0);              b[4]=1;           }           else{               for(i=0;i&lt;=4;i++)               led[i]=led[i]&amp;(~(1&lt;&lt;0));               b[4]=0;           }           randLEDs();       }</code></pre><p>控制行的按钮所调用的函数</p><pre><code>function h_1()        {              if(a[0]==0)           {               led[0]=31;               a[0]=1;           }           else{               led[0]=0;               a[0]=0;           }           randLEDs();        }          function h_2()        {              if(a[1]==0)           {               led[1]=31;               a[1]=1;           }           else{               led[1]=0;               a[1]=0;           }           randLEDs();        }          function h_3()        {              if(a[2]==0)           {               led[2]=31;               a[2]=1;           }           else{               led[2]=0;               a[2]=0;           }           randLEDs();        }          function h_4()        {              if(a[3]==0)           {               led[3]=31;               a[3]=1;           }           else{               led[3]=0;               a[3]=0;           }           randLEDs();        }          function h_5()        {              if(a[4]==0)           {               led[4]=31;               a[4]=1;           }           else{               led[4]=0;               a[4]=0;           }           randLEDs();        }</code></pre><p>之后在原来的函数randLED() 做修改，使其能跟据led数组的状态来控制小灯的亮暗。</p><pre><code>function randLEDs()          {             console.log(&quot;randomLEDs&quot;);              // state validation              if (!connected)            {                    alert(&quot;Error: Discover and connect to a device before using this function&quot;);                    return;              }              if (!services_discovered)            {                    alert(&quot;Error: Service discovery has not yet completed&quot;);                    return;             }              if (!has_led_service)            {                    alert(&quot;Error: The connected device does not contain the LED service&quot;);                    return;             }              if (!has_led_matrix_state)            {                     alert(&quot;Error: The connected device does not contain the LED matrix state characteristic&quot;);                     return;              }                var led_matrix_data = new Uint8Array(led_array);            led_matrix_state.writeValue(led_matrix_data.buffer)           .then(_ =&gt; {                  console.log(&#39;LED matrix state changed&#39;);                 })             .catch(error =&gt; {                  console.log(&#39;Error: &#39; + error);                  alert(&#39;Error: &#39; + error);   return;                 });        }</code></pre><p>添加代码的部分就完成了，下面就可以连接BBC板，点击按钮，查看小灯的状态了</p><p><img src="/CDN/06.24.1.png" alt="" loading="lazy"></p><p><img src="/CDN/06.24.2.jpg" alt="" loading="lazy"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+    
+      <category term="开发板" scheme="https://yjxsbiubiu.top/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>MicroBit蓝牙设备的启用通知</title>
